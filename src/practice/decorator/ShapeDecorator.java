@@ -20,11 +20,11 @@ class RedShapeDecorator extends ShapeDecorator {
 
 	@Override
 	public void draw() {
+		decoratedShape.draw();
 		setRedBorder(decoratedShape);
 	}
 
 	private void setRedBorder(Shape decoratedShape) {
-		decoratedShape.draw();
 		System.out.println("Border Color: Red");
 	}
 }
@@ -37,11 +37,11 @@ class GreenShapeDecorator extends ShapeDecorator {
 
 	@Override
 	public void draw() {
+		decoratedShape.draw();
 		setGreenBorder(decoratedShape);
 	}
 
 	private void setGreenBorder(Shape decoratedShape) {
-		decoratedShape.draw();
 		System.out.println("Border Color: Green");
 	}
 }
