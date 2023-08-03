@@ -1,30 +1,29 @@
 package practice.command;
 
 interface Order {
-    void execute();
+	void execute();
 }
 
 class BuyStock implements Order {
-    private Stock myStock;
+	private Stock myStock;
 
-    public BuyStock(Stock someStock) {
-        myStock = someStock;
-    }
+	public BuyStock(Stock someStock) {
+		myStock = someStock;
+	}
 
-    public void execute() {
-
-    }
+	public void execute() {
+		myStock.buy();
+	}
 }
 
 class SellStock implements Order {
-    private Stock myStock;
+	private Stock myStock;
 
-    public SellStock(Stock someStock){
-        this.myStock = someStock;
-    }
+	public SellStock(Stock someStock) {
+		this.myStock = someStock;
+	}
 
-    public void execute() {
-
-    }
+	public void execute() {
+		myStock.sell();
+	}
 }
-

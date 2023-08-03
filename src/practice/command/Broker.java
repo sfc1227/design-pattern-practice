@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Broker {
+	private List<Order> orderList = new ArrayList<>();
 
+	public void takeOrder(Order order) {
+		orderList.add(order);
+	}
 
-    public void takeOrder(Order order) {
-
-    }
-
-    public void placeOrders(){
-
-        orderList.clear();
-    }
+	public void placeOrders() {
+		for (Order order : orderList) {
+			order.execute();
+		}
+		orderList.clear();
+	}
 }
