@@ -2,9 +2,19 @@ package practice.singleton;
 
 class Captain {
 
-    private Captain() {}
+	private static Captain instance;
 
-    // Bill Pugh solution
+	private Captain() {
+	}
 
+	static Captain getCaptain() {
+		if (instance == null) {
+			instance = new Captain();
+		}
+		return instance;
+	}
 
+	public void sayHello() {
+		System.out.println("Caption: hello!");
+	}
 }
