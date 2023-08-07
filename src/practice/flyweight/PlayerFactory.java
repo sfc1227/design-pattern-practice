@@ -3,31 +3,29 @@ package practice.flyweight;
 import java.util.HashMap;
 
 public class PlayerFactory {
-    private static HashMap<String, Player> hm = new HashMap<String, Player>();
+	private static HashMap<String, Player> hm = new HashMap<String, Player>();
 
-    public static Player getPlayer(String type) {
-        Player p = null;
+	public static Player getPlayer(String type) {
+		Player p = null;
 
-        if (hm.containsKey(type)) {
-            // ???
-        
-        }
-        else {
-            switch (type) {
-                case "Terrorist":
-                    System.out.println("Terrorist Created");
-                    p = new Terrorist();
-                    break;
-                case "CounterTerrorist":
-                    System.out.println("Counter Terrorist Created");
-                    p = new CounterTerrorist();
-                    break;
-                default:
-                    System.out.println("Unreachable code!");
-            }
+		if (hm.containsKey(type)) {
+			return hm.get(type);
+		} else {
+			switch (type) {
+			case "Terrorist":
+				System.out.println("Terrorist Created");
+				p = new Terrorist();
+				break;
+			case "CounterTerrorist":
+				System.out.println("Counter Terrorist Created");
+				p = new CounterTerrorist();
+				break;
+			default:
+				System.out.println("Unreachable code!");
+			}
 
-            hm.put(type, p);
-        }
-        return p;
-    }
+			hm.put(type, p);
+		}
+		return p;
+	}
 }
