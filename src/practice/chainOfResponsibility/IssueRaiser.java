@@ -1,17 +1,15 @@
 package practice.chainOfResponsibility;
 
 class IssueRaiser {
-    public ReceiverInterface setFirstReceiver;
+	public ReceiverInterface setFirstReceiver;
 
-    public IssueRaiser(ReceiverInterface firstReceiver)
-    {
-        //???
-        
-    }
+	public IssueRaiser(ReceiverInterface firstReceiver) {
+		this.setFirstReceiver = firstReceiver;
+	}
 
-    public void raiseMessage(Message msg) {
-        if (setFirstReceiver != null)
-            // ???
-
-    }
+	public void raiseMessage(Message msg) {
+		if (setFirstReceiver != null) {
+			setFirstReceiver.processMessage(msg);
+		}
+	}
 }
