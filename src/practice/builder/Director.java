@@ -1,11 +1,12 @@
 package practice.builder;
 
 class Director {
-    MealBuilderInterface myBuilder;
+	MealBuilderInterface myBuilder;
 
-    public void construct(MealBuilderInterface builder)
-    {
-        myBuilder = builder;
-        // ???
-    }
+	public void construct(MealBuilderInterface builder) {
+		myBuilder = builder;
+		// ???
+		myBuilder.buildBurger();
+		myBuilder.buildDrink();
+	}
 }
