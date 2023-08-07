@@ -42,7 +42,7 @@ class Ford extends BasicCar implements Cloneable {
 	@Override
 	public Ford clone() {
 		Ford clone = null;
-		clone = (Ford) clone();
+		clone = (Ford) super.clone();
 		return clone;
 	}
 }
@@ -56,7 +56,7 @@ class Nano extends BasicCar implements Cloneable {
 	@Override
 	public Nano clone() {
 		Nano clone = null;
-		clone = (Nano) clone();
+		clone = (Nano) super.clone();
 		return clone;
 	}
 }
